@@ -9,6 +9,7 @@ use App\Models\Region;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class PublicationSeed extends Seeder
 {
@@ -18,12 +19,12 @@ class PublicationSeed extends Seeder
     public function run(): void
     {
         try {
+            $user = User::firstWhere('name','Admin');
             Publication::factory(150)
                 ->for(Region::factory()->create())
                 ->for(PublicationCategory::factory()->create())
-                ->for(User::factory()->create())
                 ->has(ExternalReference::factory()->count(3))
-                ->create();
+                ->create(['user_id'=>$user->id]);
         } catch (\Exception $e) {
         }
     }
