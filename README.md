@@ -2,6 +2,11 @@
 
 El proyecto cuenta con sus pruebas unitarias para la api. Utilicé Laravel, vue 3, Typescript, y una plantilla que tenía en html con Tailwindcss, cabe resaltar que aunque usé una plantilla, la componetización y funcionamientos de dichos componentes los hice yo mismo.
 
+# credenciales 
+| correo | password |
+|---|---|
+|user@user.com|Test.123|
+|admin@admin.com|Test.123| 
 # Requerimientos
 
 | | |
